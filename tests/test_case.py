@@ -36,6 +36,7 @@ class TestResourse:
     def teardown_method(self):
         self.driver.close()
 
+
 if __name__ == "__main__":
     pytest.main()
 
