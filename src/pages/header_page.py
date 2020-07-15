@@ -1,20 +1,21 @@
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class HeaderPage:
+    job_button = (By.XPATH, '//*[@class="vac-block-border"]/div/a')
     driver = None
+
 
     def __init__(self, driver):
         self.driver = driver
 
+
     def at_page(self):
         return "Работа в Netpeak: обращение руководителя, видео и презентация о карьере в Нетпик Украина" in self.driver.title
-        # try:
-        #     profile_logo_element = WebDriverWait(self.driver, 10) \
-        #         .until(EC.presence_of_element_located((By.ID, "header-details-user-fullname")))
-        #     return profile_logo_element.is_displayed()
-        # except TimeoutException:
-        #     return False
+
+
+    def click_job_button(self):
+        self.driver.implicitly_wait(5)
+        self.driver.find_element(By.XPATH,'//*[@class="vac-block-border"]/div/a').click()
+
+
