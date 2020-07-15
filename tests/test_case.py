@@ -5,7 +5,8 @@ from src.pages.netpeak import NetpeakPage
 from src.pages.job_page import JobPage
 
 
-DRIVER_PATH = "bin/chromedriver"
+# DRIVER_PATH = "bin/chromedriver"
+DRIVER_PATH = "/home/circleci/repo/bin/chromedriver"
 
 
 class TestResourse:
