@@ -43,7 +43,7 @@ class JobPage:
     def send_cv_file(self):
         self.driver.implicitly_wait(10)
         inp = self.driver.find_element_by_css_selector('input[name="up_file"]')
-        inp.send_keys('C:/1/CV.png')
+        inp.send_keys('src/resources/CV.png') #'C:/1/CV.png'
         present = WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element((By.XPATH, '//div[@id="up_file_name"]/label'), self.text_error))
         self.error = self.driver.find_element_by_css_selector('div[id="up_file_name"]')
 

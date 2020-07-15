@@ -1,0 +1,4 @@
+selenium
+pytest==3.6.3
+webdriver_manager
+allure-pytest==2.5.3
