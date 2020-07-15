@@ -10,7 +10,7 @@ DRIVER_PATH = "bin/chromedriver"
 
 class TestResourse:
     def setup_method(self):
-        self.driver = webdriver.Chrome(DRIVER_PATH)
+        self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 
         self.netpeak = NetpeakPage(self.driver)
         self.header_page = HeaderPage(self.driver)
