@@ -5,7 +5,7 @@ from src.pages.netpeak import NetpeakPage
 from src.pages.job_page import JobPage
 
 
-DRIVER_PATH = "bin/chromedriver.exe"
+DRIVER_PATH = "bin/chromedriver"
 
 
 class TestResourse:
