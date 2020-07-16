@@ -5,13 +5,10 @@ from src.pages.netpeak import NetpeakPage
 from src.pages.job_page import JobPage
 
 
-# DRIVER_PATH = "bin/chromedriver"
-DRIVER_PATH = "/home/circleci/repo/bin/chromedriver"
-
 
 class TestResourse:
     def setup_method(self):
-        self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+        self.driver = webdriver.Chrome(executable_path='chromedriver')
 
         self.netpeak = NetpeakPage(self.driver)
         self.header_page = HeaderPage(self.driver)
