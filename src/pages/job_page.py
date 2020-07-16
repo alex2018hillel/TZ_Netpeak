@@ -3,6 +3,11 @@ import random
 import string
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+import os
+
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+cv_path = os.path.join(os.path.sep, ROOT_DIR, "CV.png")
 
 
 class JobPage:
@@ -43,7 +48,7 @@ class JobPage:
     def send_cv_file(self):
         self.driver.implicitly_wait(10)
         inp = self.driver.find_element_by_css_selector('input[name="up_file"]')
-        inp.send_keys('CV.png')
+        inp.send_keys(cv_path)
         present = WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element((By.XPATH, '//div[@id="up_file_name"]/label'), self.text_error))
         self.error = self.driver.find_element_by_css_selector('div[id="up_file_name"]')
 
