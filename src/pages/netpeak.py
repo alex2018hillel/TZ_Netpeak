@@ -17,7 +17,6 @@ class NetpeakPage:
 
 
     def click_career_button(self):
-        self.driver.implicitly_wait(5)
         self.driver.find_element(By.XPATH,'//*[@id="main-menu"]/ul/li[@class="blog"]').click()
 
 

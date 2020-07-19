@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class HeaderPage:
@@ -15,7 +17,7 @@ class HeaderPage:
 
 
     def click_job_button(self):
-        self.driver.implicitly_wait(5)
+        button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@class="vac-block-border"]/div/a')))
         self.driver.find_element(By.XPATH,'//*[@class="vac-block-border"]/div/a').click()
 
 

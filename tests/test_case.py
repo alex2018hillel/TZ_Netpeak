@@ -9,7 +9,7 @@ from src.pages.job_page import JobPage
 class TestResourse:
     def setup_method(self):
         self.driver = webdriver.Chrome(executable_path='chromedriver')
-
+        self.driver.implicitly_wait(5)
         self.netpeak = NetpeakPage(self.driver)
         self.header_page = HeaderPage(self.driver)
         self.job_page = JobPage(self.driver)
